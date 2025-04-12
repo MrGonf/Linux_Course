@@ -1,7 +1,7 @@
 CUR_DIR := .
 
 INC_DIR := $(CUR_DIR)/inc
-SRC_DIR := $(CUR_DIR)/src
+SRC_DIR := $(CUR_DIR)/_src
 OBJ_DIR := $(CUR_DIR)/obj
 BIN_DIR := $(CUR_DIR)/bin
 LIB_DIR := $(CUR_DIR)/lib
@@ -27,14 +27,14 @@ linking:
 
 
 create_dirs:
-	@mkdir -p $(OBJ_DIR) $(BIN_DIR) $(SRC_DIR) $(INC_DIR) $(LIB_SHARED_DIR) $(LIB_SHARED_DIR)
+	@mkdir -p $(OBJ_DIR) $(BIN_DIR) $(SRC_DIR) $(INC_DIR) $(LIB_STATIC_DIR) $(LIB_SHARED_DIR)
 	@touch $(OBJ_DIR)/.gitkeep
 	@touch $(BIN_DIR)/.gitkeep
 	@touch $(INC_DIR)/.gitkeep
 	@touch $(SRC_DIR)/.gitkeep
 	@touch $(LIB_STATIC_DIR)/.gitkeep
 	@touch $(LIB_SHARED_DIR)/.gitkeep
-	
+
 all: create_obj create_shared linking
 	@echo "Create shared Lib sucessfully"
 
