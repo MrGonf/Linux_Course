@@ -23,6 +23,18 @@ create_shared:
 linking:
 	gcc $(OBJ_DIR)/main.o -L$(LIB_SHARED_DIR) -lmyMath -o $(BIN_DIR)/use-shared-lib
 
+
+
+
+create_dirs:
+	@mkdir -p $(OBJ_DIR) $(BIN_DIR) $(SRC_DIR) $(INC_DIR) $(LIB_SHARED_DIR) $(LIB_SHARED_DIR)
+	@touch $(OBJ_DIR)/.gitkeep
+	@touch $(BIN_DIR)/.gitkeep
+	@touch $(INC_DIR)/.gitkeep
+	@touch $(SRC_DIR)/.gitkeep
+	@touch $(LIB_STATIC_DIR)/.gitkeep
+	@touch $(LIB_SHARED_DIR)/.gitkeep
+	
 all: create_obj create_shared linking
 	@echo "Create shared Lib sucessfully"
 
