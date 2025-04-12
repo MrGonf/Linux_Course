@@ -6,4 +6,4 @@ all:
 	gcc -c -o helloHoang.o helloHoang.c -I .
 
 clean:
-	rm -rf main.o helloHoang.o helloLinux.o
+	rm -rf main.o helloHoang.o helloLinux.o test
