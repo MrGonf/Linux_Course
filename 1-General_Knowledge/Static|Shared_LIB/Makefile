@@ -23,9 +23,6 @@ create_shared:
 linking:
 	gcc $(OBJ_DIR)/main.o -L$(LIB_SHARED_DIR) -lmyMath -o $(BIN_DIR)/use-shared-lib
 
-
-
-
 create_dirs:
 	@mkdir -p $(OBJ_DIR) $(BIN_DIR) $(SRC_DIR) $(INC_DIR) $(LIB_STATIC_DIR) $(LIB_SHARED_DIR)
 	@touch $(OBJ_DIR)/.gitkeep

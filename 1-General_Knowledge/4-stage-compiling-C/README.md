@@ -10,7 +10,6 @@ This project demonstrates how a C source file is compiled into an executable pro
 ---
 
 ## Usage
----
 
 ### Use the following commands to build or clean the project:
 
@@ -29,3 +28,4 @@ all:
 clean:
 	rm -rf main.o helloHoang.o helloLinux.o test
 ```
+---
