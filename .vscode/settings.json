@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "mymath.h": "c"
+        "mymath.h": "c",
+        "stat.h": "c"
     }
 }
