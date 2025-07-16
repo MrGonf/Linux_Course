@@ -43,4 +43,4 @@
 *.sig
 
 pkg/
-src/
+# src/
