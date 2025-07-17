@@ -12,7 +12,6 @@ int main() {
     const char *filename = "./txt/text.txt";
     const char *data = "This is example data written to the file.\n";
 
-    // Ghi dữ liệu vào file (sử dụng open/write/close)
     int fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (fd == -1) {
         perror("Failed to open file");
@@ -25,14 +24,13 @@ int main() {
     }
     close(fd);
 
-    // Lấy thông tin file
+    // Get file infor
     struct stat file_info;
     if (stat(filename, &file_info) == -1) {
         perror("Failed to stat file");
         return EXIT_FAILURE;
     }
 
-    // In thông tin file
     print_file_infor(&file_info, filename);
 
     return EXIT_SUCCESS;
