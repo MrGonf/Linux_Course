@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <pthread.h>
+
+pthread_t tid1, tid2, tid3;
+
+// static void *thr_handler1(void *args) {
+
+//     return NULL;
+// }
+
+static void *thr_handler2(void *args) {
+    sleep(5);
+    printf("thread2 handler\n");
+    pthread_exit(NULL);
+    // exit(1);
+
+//===============================================================
+   while (1) {
+        printf("thread2 handler\n");
+        sleep(1);
+    };
+
+    return NULL;
+}
+
+static void *thr_handler3(void *args) {
+    pthread_detach(pthread_self());
+
+    pthread_exit(NULL);
+
+    return NULL;
+}
+
+int main(int argc, char const *argv[]) {
+
+    int ret, counter = 0;
+    int retval;
+
+    // if ((ret = pthread_create(&tid2, NULL, &thr_handler2, NULL)) != 0) {
+    //     printf("pthread_create() error number = %d\n", ret);
+    //     return -1;
+    // }
+
+//===============================================================
+    // while (1);
+//===============================================================
+    // sleep(5);
+    // pthread_cancel(tid2);
+//===============================================================
+
+
+    while (1) {
+        if ((ret = pthread_create(&tid3, NULL, &thr_handler3, NULL)) != 0) {
+            printf("pthread_create() error number = %d\n", ret);
+            return -1;
+        }
+    
+        counter++;
+
+        if (counter % 1000 == 0) {
+            printf("Thread created: %d\n", counter);
+        }
+    }
+
+    return 0;
+}
